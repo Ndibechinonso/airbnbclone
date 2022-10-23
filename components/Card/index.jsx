@@ -21,15 +21,12 @@ const Card = ({ imageArray }) => {
       >
         {imageArray.map((item, index) => {
           return (
-              <div key={index} className={styles.image_container} style={{width: '100%', height: '100%', position: 'relative'}}>
+              <div key={index} className={styles.image_container}>
                 <Image
                   src={item}
-                  layout="fill"
-                  objectFit="contain"
-                  // width={279.3}
-                  // height={265.23}
+                  width={279.3}
+                  height={265.23}
                   alt=""
-                  className={styles.image}
                 />
                  <button onClick={() => setLike()} className={`${styles.like} ${isLiked ? "liked" : ""}`}><Like /></button> 
               </div>
