@@ -10,30 +10,30 @@ import Link from "next/link";
 import NavItems from "../Navbar/NavIcons";
 import useWindowDimensions from "../hooks/useWindowDimension";
 
-const SampleNextArrow = (props) =>{
+const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div className={`arrow_btn next`} style={{}} onClick={onClick}>
       <Next />
     </div>
   );
-}
+};
 
-const SamplePrevArrow = (props) =>{
+const SamplePrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
-    <div className={`arrow_btn prev`} style={{}} onClick={onClick}>    
+    <div className={`arrow_btn prev`} style={{}} onClick={onClick}>
       <Prev />
     </div>
   );
-}
+};
 
 const NavbarCarousel = () => {
   var router = useRouter();
   const [slideNumber, setSlideNumber] = useState(12);
   const { width, height } = useWindowDimensions();
 
-  useEffect(()=>{
+  useEffect(() => {
     if (width < 730 && width >= 500) {
       setSlideNumber(8);
     } else if (width < 500) {
@@ -41,7 +41,7 @@ const NavbarCarousel = () => {
     } else {
       setSlideNumber(12);
     }
-  }, [width])
+  }, [width]);
 
   const settings = {
     dots: false,
