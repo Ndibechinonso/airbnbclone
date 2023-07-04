@@ -32,6 +32,7 @@ const NavbarCarousel = () => {
   var router = useRouter();
   const [slideNumber, setSlideNumber] = useState(12);
   const { width, height } = useWindowDimensions();
+  const [isFirstSlide, setIsFirstSlide] = useState(true)
 
   useEffect(() => {
     if (width < 730 && width >= 500) {
@@ -49,8 +50,17 @@ const NavbarCarousel = () => {
     speed: 500,
     slidesToShow: slideNumber,
     slidesToScroll: 3,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: isFirstSlide && <SampleNextArrow />,
+    prevArrow: !isFirstSlide && <SamplePrevArrow />,
+    beforeChange: (oldIndex, newIndex) => {
+      switch (newIndex) {
+          case 0: 
+          setIsFirstSlide(true)
+              break
+          default: 
+          setIsFirstSlide(false)
+      }
+  }
   };
 
   return (
@@ -62,7 +72,7 @@ const NavbarCarousel = () => {
               <div>
                 <a
                   className={`menu ${
-                    router.pathname === item.routepath ? "active_route" : ""
+                    router.asPath === item.routepath ? "active_route" : ""
                   }`}
                 >
                   <NavItems tab={item.name} />
