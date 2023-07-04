@@ -349,11 +349,8 @@ a {
   }
 }
 @media (max-width: 990px){
-  // .right_footer_span{
-  //   display: none !important;
-  // }
+
   .right_footer {
-    // display: flex;
     flex-direction: column !important;
     gap: 5px !important;
     font-size: 14px;
