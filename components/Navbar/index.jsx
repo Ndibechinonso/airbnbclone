@@ -6,8 +6,8 @@ import UserAvatar from "../CustomIcons/UserAvatar";
 import Carousel from "../Carousel";
 import Filters from "../CustomIcons/Filter";
 import Logo from "../CustomIcons/Logo";
-const Navbar = () => {
 
+const Navbar = () => {
   return (
     <>
       <div className={`topNav`}>
