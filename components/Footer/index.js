@@ -16,10 +16,12 @@ const Footer = () => {
       {showMap ? (
         <div className="footer_content">
           <div className="left_footer">
-            <span className="">© 2022 Airbnb, Inc </span> <span>·</span>
-            <span>Privacy</span> <span>·</span> <span>Terms</span>{" "}
-            <span>·</span>
-            <span>Sitemap</span> <span>·</span> <span>Destinations</span>
+            <span className="">© 2022 Airbnb, Inc </span> <span className="divider">·</span>
+            <span className="center_footer">
+            <span className="center_footer_1"><span>Privacy</span> <span>·</span> <span>Terms</span></span>
+            <span className="divider">·</span>
+            <span className="center_footer_@"> <span>Sitemap</span> <span>·</span> <span>Destinations</span></span>
+            </span>
           </div>
           <div className="right_footer">
             <span className="right_footer_span">
